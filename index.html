@@ -352,7 +352,35 @@
   }
   @media (max-width:600px){
     .moments-grid{ grid-template-columns:1fr; }
-    .moment-tile.big{ grid-column:auto; }
+    .moment-tile,
+    .moment-tile.big,
+    .moment-tile[style]{ grid-column:auto !important; grid-row:auto; min-height:240px; }
+  }
+
+  @media (max-width:480px){
+    .container{ padding-left:18px; padding-right:18px; }
+    .nav-wrap{ padding-left:18px; padding-right:18px; }
+    .brand{ gap:10px; }
+    .brand-logo{ width:46px; height:46px; }
+    .hero-grid{ padding:56px 18px 64px; }
+    .hero h1{ font-size:clamp(38px,12vw,52px); }
+    .hero .tagline-line{ font-size:10px; letter-spacing:2.5px; }
+    .hero p.lede{ font-size:15px; }
+    .hero .cta-row{ flex-direction:column; align-items:stretch; gap:12px; }
+    .hero .btn{ text-align:center; width:100%; }
+    .about, .services{ padding-top:76px; padding-bottom:70px; }
+    .about-art{ max-width:none; min-height:280px; }
+    .about-art img{ min-height:280px; }
+    .service-row{ gap:14px; }
+    .service-copy h3{ font-size:18px; }
+    .service-copy p{ font-size:14px; }
+    .service-panel{ min-height:280px; }
+    .faq-q{ padding:20px 0; font-size:15px; gap:12px; }
+    .faq-q .qtext{ max-width:none; }
+    .faq-a-inner{ font-size:14px; }
+    .news-form{ flex-direction:column; gap:10px; max-width:none; }
+    .news-form input,
+    .news-form button{ width:100%; border-radius:2px; }
   }
 
   /* ---------- FAQ ---------- */
@@ -398,7 +426,7 @@
   }
   .footer-top{
     position:relative; z-index:1;
-    padding:80px 0 56px;
+    padding:80px clamp(20px,5vw,64px) 56px;
     display:grid; grid-template-columns: 1fr 1fr 1.2fr; gap:56px;
   }
   .footer-brand .wordmark .aurea{ color:var(--cream); font-family:'Cormorant Garamond', serif; font-size:22px; letter-spacing:4px; }
@@ -436,7 +464,7 @@
   .footer-bottom{
     position:relative; z-index:1;
     border-top:1px solid rgba(255,255,255,.18);
-    padding:24px 0;
+    padding:24px clamp(20px,5vw,64px);
     display:flex; flex-wrap:wrap; gap:10px 28px; justify-content:center;
     font-size:13.5px; color:#dfe3d0;
   }
